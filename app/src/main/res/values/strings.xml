@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">ArmProject</string>
+    <string name="garra">Garra</string>
+    <string name="pulso_sobe_desce">Pulso Sobe-Desce</string>
+    <string name="pulso_giratroio">Pulso Giratróio</string>
+    <string name="ombro">Ombro</string>
+    <string name="cintura">Cintura</string>
+    <string name="cotovelo">Cotovelo</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
