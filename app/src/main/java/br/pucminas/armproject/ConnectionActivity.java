@@ -2,19 +2,12 @@ package br.pucminas.armproject;
 
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
-import android.content.BroadcastReceiver;
-import android.content.Context;
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.databinding.DataBindingUtil;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
-import android.util.Log;
-import android.widget.Toast;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Set;
 
 import br.pucminas.armproject.databinding.ActivityConnectionBinding;
@@ -25,7 +18,6 @@ public class ConnectionActivity extends AppCompatActivity {
 
     final int REQUEST_ENABLE_BT = 1;
     BluetoothAdapter mBluetoothAdapter;
-    BluetoothDevice selectedDevice;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

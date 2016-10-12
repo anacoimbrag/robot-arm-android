@@ -1,5 +1,6 @@
 package br.pucminas.armproject;
 
+import android.bluetooth.BluetoothDevice;
 import android.databinding.DataBindingUtil;
 import android.os.StrictMode;
 import android.support.v7.app.AppCompatActivity;
@@ -12,6 +13,8 @@ import br.pucminas.armproject.databinding.ActivityMainBinding;
 public class MainActivity extends AppCompatActivity {
 
     ActivityMainBinding binding;
+
+    BluetoothDevice device;
 
     int velocidade;
 
@@ -27,6 +30,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
 
+        device = getIntent().getParcelableExtra("device");
+        binding.setDevice(device);
+
         int radioId = binding.velocity.getCheckedRadioButtonId();
         if(radioId == R.id.rb_1){
             velocidade = 1;
@@ -36,58 +42,18 @@ public class MainActivity extends AppCompatActivity {
             velocidade = 3;
         }
 
-        binding.valueGarra.setMinValue(90);
-        binding.valueGarra.setMaxValue(140);
-        binding.valueGarra.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
-            @Override
-            public void onValueChange(NumberPicker numberPicker, int i, int i1) {
-                garra = i;
-            }
-        });
-
-        binding.valuePulsoSd.setMinValue(30);
-        binding.valuePulsoSd.setMaxValue(120);
-        binding.valuePulsoSd.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
-            @Override
-            public void onValueChange(NumberPicker numberPicker, int i, int i1) {
-                pulsoSd = i;
-            }
-        });
-
-        binding.valuePulsoGira.setMinValue(60);
-        binding.valuePulsoGira.setMaxValue(150);
-        binding.valuePulsoGira.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
-            @Override
-            public void onValueChange(NumberPicker numberPicker, int i, int i1) {
-                pulsoGira = i;
-            }
-        });
-
-        binding.valueCotovelo.setMinValue(40);
-        binding.valueCotovelo.setMaxValue(130);
-        binding.valueCotovelo.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
-            @Override
-            public void onValueChange(NumberPicker numberPicker, int i, int i1) {
-                cotovelo = i;
-            }
-        });
-
-        binding.valueOmbro.setMinValue(50);
-        binding.valueOmbro.setMaxValue(110);
-        binding.valueOmbro.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
-            @Override
-            public void onValueChange(NumberPicker numberPicker, int i, int i1) {
-                ombro = i;
-            }
-        });
-
-        binding.valueCintura.setMinValue(10);
-        binding.valueCintura.setMaxValue(110);
-        binding.valueCintura.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
-            @Override
-            public void onValueChange(NumberPicker numberPicker, int i, int i1) {
-                cintura = i;
-            }
-        });
+        ValueEventHandler handler;
+        handler = new ValueEventHandler(140, 90, binding.valueGarra.valueGarra);
+        binding.setGarra(handler);
+        handler = new ValueEventHandler(120, 30, binding.valuePulsoSd.valueGarra);
+        binding.setPulsoSD(handler);
+        handler = new ValueEventHandler(150, 60, binding.valuePulsoGira.valueGarra);
+        binding.setPulsoGira(handler);
+        handler = new ValueEventHandler(130, 40, binding.valueCotovelo.valueGarra);
+        binding.setCotovelo(handler);
+        handler = new ValueEventHandler(110, 50, binding.valueOmbro.valueGarra);
+        binding.setOmbro(handler);
+        handler = new ValueEventHandler(110, 10, binding.valueCintura.valueGarra);
+        binding.setCintura(handler);
     }
 }
