@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context="br.pucminas.armproject.SequenceActivity">
+        <LinearLayout
+            android:id="@+id/activity_sequence"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:orientation="vertical"
+            >
+
+            <include layout="@layout/move_view"
+                android:id="@+id/move1"/>
+
+            <include layout="@layout/move_view"
+                android:id="@+id/move2"/>
+
+            <include layout="@layout/move_view"
+                android:id="@+id/move3"/>
+
+            <include layout="@layout/move_view"
+                android:id="@+id/move4"/>
+
+            <include layout="@layout/move_view"
+                android:id="@+id/move5"/>
+
+            <include layout="@layout/move_view"
+                android:id="@+id/move6"/>
+
+            <include layout="@layout/move_view"
+                android:id="@+id/move7"/>
+
+            <include layout="@layout/move_view"
+                android:id="@+id/move8"/>
+
+            <include layout="@layout/move_view"
+                android:id="@+id/move9"/>
+
+            <include layout="@layout/move_view"
+                android:id="@+id/move10"/>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="10dp" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_blue"
+                android:textColor="@android:color/white"
+                android:text="Gravar Sequência"/>
+            <View
+                android:layout_width="0dp"
+                android:layout_height="10dp" />
+        </LinearLayout>
+    </ScrollView>
+
+</layout>

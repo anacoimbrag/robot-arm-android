@@ -44,4 +44,11 @@ public class ConnectionActivity extends AppCompatActivity {
         binding.deviceList.setLayoutManager(new LinearLayoutManager(this));
 
     }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data){
+        if(requestCode == REQUEST_ENABLE_BT) {
+            setUpBluetooth();
+        }
+    }
 }

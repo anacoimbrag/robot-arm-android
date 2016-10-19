@@ -66,6 +66,7 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/instructions"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Você está conectado a"/>
@@ -296,21 +297,39 @@
                 android:layout_height="20dp" />
 
             <Button
+                android:id="@+id/send_position"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/btn_blue"
+                android:textColor="@android:color/white"
                 android:text="Gravar Posição"/>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="10dp" />
+
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/btn_blue"
+                android:textColor="@android:color/white"
                 android:text="Iniciar Sequência"/>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="10dp" />
+
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/btn_blue"
+                android:textColor="@android:color/white"
                 android:text="Parar"/>
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Enviar Sequência"/>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="10dp" />
+
         </LinearLayout>
     </ScrollView>
 </layout>

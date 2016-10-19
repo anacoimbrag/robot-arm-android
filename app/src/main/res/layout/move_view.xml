@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:gravity="center_horizontal"
+        android:paddingTop="20dp"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <EditText
+                android:id="@+id/velocity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/corner_bg"
+                android:padding="6dp"
+                android:inputType="number"
+                android:hint="(1-3)"/>
+
+            <View
+                android:layout_width="5dp"
+                android:layout_height="0dp" />
+            <EditText
+                android:id="@+id/garra"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/corner_bg"
+                android:padding="6dp"
+                android:inputType="number"
+                android:hint="(90-140)"/>
+            <View
+                android:layout_width="5dp"
+                android:layout_height="0dp" />
+            <EditText
+                android:id="@+id/pulso_sd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/corner_bg"
+                android:padding="6dp"
+                android:inputType="number"
+                android:hint="(30-120)"/>
+            <View
+                android:layout_width="5dp"
+                android:layout_height="0dp" />
+            <EditText
+                android:id="@+id/pulso_gira"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/corner_bg"
+                android:padding="6dp"
+                android:inputType="number"
+                android:hint="(60-150)"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:orientation="horizontal">
+            <EditText
+                android:id="@+id/cotovelo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/corner_bg"
+                android:padding="6dp"
+                android:inputType="number"
+                android:hint="(40-130)"/>
+            <View
+                android:layout_width="5dp"
+                android:layout_height="0dp" />
+            <EditText
+                android:id="@+id/ombro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/corner_bg"
+                android:padding="6dp"
+                android:inputType="number"
+                android:hint="(50-110)"/>
+            <View
+                android:layout_width="5dp"
+                android:layout_height="0dp" />
+            <EditText
+                android:id="@+id/cintura"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/corner_bg"
+                android:padding="6dp"
+                android:inputType="number"
+                android:hint="(10-110)"/>
+        </LinearLayout>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="20dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/colorAccent" />
+
+    </LinearLayout>
+</layout>
