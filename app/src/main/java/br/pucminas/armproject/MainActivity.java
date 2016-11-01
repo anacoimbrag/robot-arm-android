@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
      * Formato de envio da mensagem:
      *
      * c/p (0)
-     * c/p/p/p (1)
+     * c/np/p/p/p (1)
      * c (2,3)
      *
      */
@@ -170,7 +170,40 @@ public class MainActivity extends AppCompatActivity {
         binding.sendPosition.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mSmoothBluetooth.send("test");
+                switch (binding.velocity.getCheckedRadioButtonId()) {
+                    case R.id.rb_1:
+                        velocidade = 100;
+                        break;
+                    case R.id.rb_2:
+                        velocidade = 50;
+                        break;
+                    case R.id.rb_3:
+                        velocidade = 10;
+                        break;
+                }
+                garra = Integer.parseInt(binding.valueGarra.valueGarra.getText().toString());
+                pulsoSd = Integer.parseInt(binding.valuePulsoSd.valueGarra.getText().toString());
+                pulsoGira = Integer.parseInt(binding.valuePulsoGira.valueGarra.getText().toString());
+                cotovelo = Integer.parseInt(binding.valueCotovelo.valueGarra.getText().toString());
+                ombro = Integer.parseInt(binding.valueOmbro.valueGarra.getText().toString());
+                cintura = Integer.parseInt(binding.valueCintura.valueGarra.getText().toString());
+
+                mSmoothBluetooth.send("0/" + velocidade + "," + garra + "," + pulsoSd +
+                        ","  + pulsoGira + "," + cotovelo + ","  + ombro + ","  + cintura);
+            }
+        });
+
+        binding.initSequence.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mSmoothBluetooth.send("1");
+            }
+        });
+
+        binding.stop.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mSmoothBluetooth.send("3");
             }
         });
     }
@@ -191,7 +224,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem menuItem) {
         if(menuItem.getItemId() == R.id.sequence) {
-            startActivity(new Intent(this, SequenceActivity.class));
+            Intent intent = new Intent(this, SequenceActivity.class);
+            intent.putExtra("device", device);
+            startActivity(intent);
         }
 
         return super.onOptionsItemSelected(menuItem);
