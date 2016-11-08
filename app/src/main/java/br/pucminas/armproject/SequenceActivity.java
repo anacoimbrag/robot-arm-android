@@ -108,7 +108,7 @@ public class SequenceActivity extends AppCompatActivity {
         binding.saveSequence.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String msg = "1/" + finalNumberMovments + "/";
+                String msg = "2/" + finalNumberMovments + "/";
                 msg += validate(binding.move1) ? getPosition(binding.move1) + "/" : "";
                 msg += validate(binding.move2) ? getPosition(binding.move2) + "/" : "";
                 msg += validate(binding.move3) ? getPosition(binding.move3) + "/" : "";
@@ -120,7 +120,7 @@ public class SequenceActivity extends AppCompatActivity {
                 msg += validate(binding.move9) ? getPosition(binding.move9) + "/" : "";
                 msg += validate(binding.move10) ? getPosition(binding.move10) : "";
 
-
+                mSmoothBluetooth.send(msg);
             }
         });
 
